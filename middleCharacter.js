@@ -9,3 +9,10 @@ function middleChar(str) {
 }
 
 middleChar("testing")
+
+//option 2 with iterary operator
+function middleChar(str) {
+  return str.length % 2 === 0) ? str[(str.length / 2) - 1] + str[(str.length / 2)]: str[Math.floor(str.length / 2)]
+}
+
+middleChar("testing")
