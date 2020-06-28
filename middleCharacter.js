@@ -4,9 +4,8 @@ function middleChar(str) {
     return str[middle - 1] + str[middle];
   }
   else {
-    let middle = Math.round(str.length / 2);
-    return str[middle - 1];
+    return str[Math.floor(str.length / 2)];
   }
 }
 
-middleChar("abcdefg")
+middleChar("testing")
