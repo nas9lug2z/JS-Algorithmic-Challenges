@@ -8,3 +8,4 @@ function evenOrOdd (num){
 }
 
 evenOrOdd(15)
+console.log("hello world")
