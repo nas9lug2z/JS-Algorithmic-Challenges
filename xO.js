@@ -2,10 +2,10 @@ function XO(str) {
   let chars = str.toLowerCase().split("");
   let x, o = 0;
   for (let char of chars) {
-    if (char.includes("x")) {
+    if (char === "x")) {
       x++;
     }
-    else if (char.includes("o")) {
+    else if (char === "o") {
       o++;
     }
   }
