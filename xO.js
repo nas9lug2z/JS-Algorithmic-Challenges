@@ -1,7 +1,6 @@
 function XO(str) {
   let chars = str.toLowerCase().split("");
-  let x = 0;
-  let o = 0;
+  let x, o = 0;
   for (let char of chars) {
     if (char.includes("x")) {
       x++;
