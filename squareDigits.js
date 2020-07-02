@@ -3,9 +3,9 @@ function squareDigits(num) {
   let resultstr = [];
   for (i = 0; i < numString.length; i++) {
     let indnum = Number(numString[i]);
-    resultstr.push(Math.pow(indnum, 2).toString())
+    resultstr.push(Math.pow(Number(numString[i]), 2))
   }
-  return Number(resultstr.join(""));
+  console.log(Number(resultstr.join("")));
 }
 
 squareDigits(1234);
