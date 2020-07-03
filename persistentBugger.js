@@ -1,13 +1,10 @@
 function persistence(num) {
   let counter = 0;
   while (num >= 10) {
-      //convert whole number into an array of strings strarr
-      let strarr = [];
-      strarr = num.toString().split("");
-      //convert all individual items of the string array to numbers in a new array of numbers numarr
+
       let numarr = [];
-      for (let i = 0; i < strarr.length; i++) {
-        numarr.push(Number(strarr[i]));
+      for (let i = 0; i < num.length; i++) {
+        numarr.push(num[i]);
       }
       //multiply every number
       let multres = numarr[0];
