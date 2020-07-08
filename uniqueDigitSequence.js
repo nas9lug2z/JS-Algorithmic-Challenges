@@ -18,7 +18,7 @@ let seqNum = 0;
             firstDigit = Math.floor(i/100);
             lastNum.push(firstDigit);
             console.log(firstDigit)
-            secondDigit = Math.floor(i-(firstDigit*100)/10);
+            secondDigit = Math.floor((i-(firstDigit*100))/10);
             lastNum.push(secondDigit);
             thirdDigit = i % 10;
             lastNum.push(thirdDigit);
