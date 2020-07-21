@@ -9,7 +9,9 @@ function casinoChips (arr) {
         let minI = 0;
         for (let i = 0; i < 3; i++) {
             if (arr[i] === 0) {
-                //nothing happens
+                if (i === 0) {
+                    min = arr[i+1];
+                }
             }
             else if (arr[i] <= min) {
                 min = arr[i];
@@ -38,7 +40,7 @@ function casinoChips (arr) {
         console.log(`arr now is ${arr}`)
         counter ++;
         console.log(`counter added and total is ${counter}`)
-        console.log(`zerocount is ${zeroCount}`)
+
         //add check
 
         for (let item of arr) {
@@ -46,6 +48,7 @@ function casinoChips (arr) {
                 zeroCount++;
             }
         }
+        console.log(`zerocount is ${zeroCount}`)
         if (zeroCount >= 2) {
             stop = 1;
         }
@@ -54,4 +57,4 @@ function casinoChips (arr) {
 
 }
 
-console.log (casinoChips([8, 2 ,8]));
+console.log (casinoChips([1, 23 ,8]));
