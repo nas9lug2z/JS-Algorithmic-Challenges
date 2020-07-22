@@ -1,10 +1,17 @@
 function meeting(s) {
-    console.log(s);
-    let arr = s.split(";");
-
+    let unsortedArr = [];
     //let's create objects
     //we need a for loop and assign values to objects
-    console.log(arr);
+    for (let item of s.split(";")) {
+        unsortedArr.push(
+            {
+                "surname": item.split(":")[1],
+                "first_name": item.split(":")[0]
+            }
+        )
+
+    }
+    console.log(unsortedArr);
 }
 
 
