@@ -1,7 +1,5 @@
 function meeting(s) {
     let unsortedArr = [];
-    //let's create objects
-    //we need a for loop and assign values to objects
     for (let item of s.split(";")) {
         unsortedArr.push(
             {
@@ -11,7 +9,13 @@ function meeting(s) {
         )
 
     }
-    console.log(unsortedArr);
+    unsortedArr.sort(function (a, b) {
+        let surA = a.surname.toLowerCase();
+        let surB = b.surname.toLowerCase();
+        surA > surB ? return: -1 : return 1;
+    })
+
+
 }
 
 
