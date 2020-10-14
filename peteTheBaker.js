@@ -1,6 +1,4 @@
 function cakes(recipe, available) {
-    console.log(Object.keys(available).length)
-
     //check how many portions is possible to cook
     let possiblePortions = [];
     for (let necessaryIngredient in recipe) {
@@ -27,7 +25,6 @@ function cakes(recipe, available) {
             }
         }
 }
-
     //check what is the maximum available possibility to cook with all ingredients
     let maxPossible = possiblePortions[0];
     for (let option of possiblePortions) {
@@ -36,8 +33,6 @@ function cakes(recipe, available) {
         }
     }
     return maxPossible;
-
-
 }
 
 
