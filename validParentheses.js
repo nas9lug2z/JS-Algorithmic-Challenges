@@ -1,37 +1,19 @@
 function validParentheses(string){
-    console.log(`atring length is ${string.length}`)
-    //first check on even numbers
-        if (string.length % 2 !== 0) {
-            return false;
-        }
-        else if (string.length === 0) {
-            console.log('trueee')
-            return true;
-            break;
+    let arr = string.split('');
+    while (arr.length > 1) {
+        if (arr[0] === '(') {
+            let j = 0;
+            while (arr[j] === '('){
+                j++
+            }
+            arr.splice(j, 1);
+            arr.shift();
         }
         else {
-            let arr = string.split('');
-            arr.forEach((letter, index) => {
-                let openingPar = null;
-                let closingPar = null;
-                if (letter === '(') {
-                    openingPar = index;
-                    let i = arr.length - 1;
-                    while (!i === '(') {
-                        i--;
-                    }
-                    closingPar = i;
-                }
-                else {
-                    return false
-                }
-                arr.shift();
-                arr.pop();
-                console.log(arr.join(''));
-                validParentheses(arr.join(''));
-            })
+            return false;
         }
-    
+    }
+    return (arr.length === 0 ? true : false) 
 }
 
-console.log(validParentheses( "(())((()())())" ));
+console.log(validParentheses( "()" ));
