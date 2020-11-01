@@ -1,36 +1,41 @@
-function theSame(a, b) {
-    let valCheck = 0;
-    for (let i = 0; i < b.length; i++) {
-        if (b[i] === null || a[i] === null || b[i] === undefined || a[i] === undefined) {
-            valCheck = 1;
-            return false;
-        }
+function comp(a, b) {
+  if (a === null || b === null) {
+    return false;
+  }
+  a.sort((a, b) => {
+    if (a < b) {
+      return -1;
+    } else if (a > b) {
+      return 1;
+    } else if (a === b) {
+      return 0;
     }
-
-        if (valCheck === 0) {
-            //let's sort arrays
-            a.sort(function(a, b){return a - b});
-            b.sort(function(a, b){return a - b});
-
-            //add first condition: if arrays don't have same length, return false
-
-            let counter = 0;
-            for (let i=0; i < a.length; i++) {
-                if (a[i]*a[i] === b[i]) {
-                    counter++;
-                }
-            }
-            return counter === a.length ? true : false;
-
-        }
-        else {
-            return false;
-        }
+  });
+  b.sort((a, b) => {
+    if (a < b) {
+      return -1;
+    } else if (a > b) {
+      return 1;
+    } else if (a === b) {
+      return 0;
+    }
+  });
+  let aSquared = [];
+  let isFalse = false;
+  if (a.length === b.length) {
+    aSquared = a.map((x) => x * x);
+    aSquared.forEach((elem, index) => {
+      if (elem !== b[index]) {
+        isFalse = true;
+      }
+    });
+  } else {
+    return false;
+  }
+  return isFalse ? false : true;
 }
 
+a = [46, 43, 70, 12, 95];
+b = [2116, 1850, 4900, 144, 9025];
 
-
-a = [121, 144, 19, 161, 19, 144, 19, 11];
-b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
-
-theSame(a, b);
+console.log(comp(a, b));
