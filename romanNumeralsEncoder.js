@@ -1,13 +1,11 @@
-function romanNumeralEncoder(num) {
-    let arr = Array.from(String(num), Number);
-    let result = "";
-    switch(true) {
-        case arr.length >= 4:
-            for (let i = 0; i < (arr.length - 3); i++) {
-                result += "M";
-            }
-    }
-    console.log(result);
+function solution(number) {
+  let resultarr = [];
+  let m = "M";
+  switch (true) {
+    case number >= 1000:
+      resultarr.push(m.repeat(Math.floor(number / 1000)));
+  }
+  return resultarr.join("");
 }
 
-romanNumeralEncoder(1395);
+console.log(solution(3395));
